@@ -1,6 +1,6 @@
 import random; import pandas as pd
 def write_words(): #Imports words, puts them through a profanity filter, writes them to filtered words file. Optional
-    from profanity_check import predict #imported here instead of at the top because there are a bunch of warnings when imporint :(
+    from profanity_check import predict #imported here instead of at the top because there are a bunch of warnings when importing :(
     file = 'english-words\\words_alpha.txt' #Original file.
     with open(file) as word_file:
         valid_words = [word for word in list(word_file.read().split()) if word[-2:len(word)] == "er" and predict([word]) == 0]
